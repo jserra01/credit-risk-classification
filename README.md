@@ -1,33 +1,41 @@
-# credit-risk-classification
-
-# Module 12 Report Template
+# Module 20 Supervised Learning Report
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+We evaluted historical data from a peer-to-peer lending services company to build a model to identify credit worthiness of customers and whether their loan has a high risk of defaulting.  Financial information available for this analysis is:
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+Features:
+* Loan Size
+* Interest Rate
+* Borrower Income
+* Debt to Income Ratio
+* Number of Accounts
+* Number of Derrogatory Marks
+* Total Debt
+
+Target:
+* Loan Status: High Risk (1) vs. Healthy (0)
+
+## Approach
+
+Our intent with this analysis is to predict loan status based on available historical data.  This data for loan status consisted of 77,536 loans with 75,036 (97%) healthy loans and 2,500 (3%) high-risk loans.  To accomplish this anlayis, we used Logistic Regression to build our models.  After splitting the data into training and testing samples, we built our first model with the original data set.  Given the large discrepancy in data towards the health loans, we built a second model and oversampled the high-risk loans using 
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+* Machine Learning Model 1: Original Data
+  * Model 1 Accuracy: 99%
+  * Healthy Loan Precision: 100%
+  * Healthy Loan Recall: 99%
+  * High-Risk Loan Precision: 85%
+  * High-Risk Loan Recall: 91%
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+* Machine Learning Model 2: Resampled Data - oversampling High-Risk loans
+  * Model 1 Accuracy: 99%
+  * Healthy Loan Precision: 100%
+  * Healthy Loan Recall: 99%
+  * High-Risk Loan Precision: 84%
+  * High-Risk Loan Recall: 99%
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+Similar results achievied for both models with an accuracy of 99% and relatively low precision on High-Risk loans (85% for Model 1 vs 84% for Model 2).  Given that it is more important to predict High-Risk loans and the higher reall in Model 2 and relatively similar precision between both models, my recommendation is to use Model 2.  Although, I would recommend exploring additional features/data elements and possibly increasing the sample size to build a better model and continue to strive for better prediction of High-Risk loans.
