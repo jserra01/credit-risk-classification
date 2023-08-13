@@ -41,4 +41,4 @@ Our intent with this analysis is to predict loan status based on available histo
 Similar results achievied for both models with an accuracy of 99% and relatively low precision on High-Risk loans (85% for Model 1 vs 84% for Model 2).  Given that it is more important to predict High-Risk loans and the higher reall in Model 2 and relatively similar precision between both models, my recommendation is to use Model 2.  Although, I would recommend exploring additional features/data elements and possibly increasing the sample size to build a better model and continue to strive for better prediction of High-Risk loans.
 
 ## Sources
-(https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/)[Machine Learning Mastery]: oversampling example
+* [MachineLearningMastery.com](https://machinelearningmastery.com/random-oversampling-and-undersampling-for-imbalanced-classification/) for example of using oversampling.
